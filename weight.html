@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    		<title>Directive by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+
+<script type="text/javascript">
+
+// Length Converter script- By Bruce Zhang
+// For this and over 400+ free scripts, visit JavaScript Kit- http://www.javascriptkit.com/
+// Please keep this notice intact
+
+var factors1 = [1, 0.001, 0.000001, 0.00001];
+var factors2 = [1000, 1, 0.001, 0.01];
+var factors3 = [1000000, 1000, 1, 0.1];
+var factors4 = [100000, 100, 10, 1];
+var factors = [factors1,factors2,factors3,factors4];
+
+function convert_unit()
+{
+	from_index = document.length_con.from_unit.selectedIndex;
+	to_index = document.length_con.to_unit.selectedIndex;
+	factor = factors[from_index][to_index];
+	document.getElementById("formula").innerHTML = document.length_con.from_unit.options[document.length_con.from_unit.selectedIndex].text + " = " + factor + " " + document.length_con.to_unit.options[document.length_con.to_unit.selectedIndex].text;
+	if(isNaN(document.length_con.from_value.value))
+		document.getElementById("to_value").innerHTML = "Not a valid number.";
+	else
+		document.getElementById("to_value").innerHTML = factor * document.length_con.from_value.value;
+}
+</script> 
+
+</head>
+<body>
+				<div class="box container">
+					<header>
+						<h2>How heavy is it?</h2>
+					</header>
+					<section>
+						<header>
+							<h3>African bush elephant</h3>
+							<p><i>Loxodonta africana</i></p>
+						</header>
+						<p>The African bush elephant (<i>Loxodonta africana</i>) is the larger of the two species of African elephant. Both it and the African forest elephant have usually been classified as a single species, known simply as the African elephant, but recent preliminary evidence has seen the forest elephant classified as a distinct species.</p>
+					</section>
+					<section>
+						<header>
+							<h3>Where can I learn more?</h3>
+						</header>
+						<blockquote>You can learn more about African bush elephants by visiting the <a href="http://www.awf.org/wildlife-conservation/elephant" target="_blank">African Wildlife Foundation website</a>.</blockquote>
+					</section>
+					<section>
+						<header>
+							<h3>Let's get calculating!</h3>
+						</header>
+						<p>
+						<b>Step 1:</b> Select a weight unit from the <i>From</i> dropdown list and another from the <i>To</i> dropdown list.
+						<br/><b>Step 2:</b> Enter a number value, then click the "How Many?" button.
+						<p><form name="length_con">
+
+						<table>
+
+						<tr>
+						<td>From </td>
+
+						<td>
+						<select name=from_unit onChange="convert_unit()";>
+						<option> Gram(s)
+						<option> Kilogram(s)
+						<option> Tonne(s)
+						<option> Baby African Elephant(s)
+						</select>
+
+						</td>
+						<td></td>
+						<td>To </td>
+						<td>
+						<select name=to_unit onChange="convert_unit()";>
+						<option> Gram(s)
+						<option> Kilogram(s)
+						<option> Tonne(s)
+						<option> Baby African Elephant(s)
+						</select>
+
+						</td>
+					</tr>
+					<tr>
+					<td> </td><td colspan="3"><div id="formula">1 gram = 1 gram</div></td>
+					</tr>
+
+				<tr>
+					<td colspan="4"> </td>
+					</tr>
+
+					<tr>
+					<td>Enter </td>
+					<td><input type="text" name="from_value" value="1" size="12" maxlength="12"></td>
+					</tr>
+					<tr>
+					<td colspan="4"> <input type=button value="How Many?" onClick="convert_unit()";> </td>
+				</tr>
+					<td><div id="to_value">1</div></td>
+					</tr>
+
+				<tr>
+<!--		<td><div align="center" style="font: normal 11px Arial">This free script provided by<br />
+<a href="http://www.javascriptkit.com">JavaScript Kit</a></div></td></tr> -->
+
+</table>
+
+</form>
+					</section>
+					<!--
+					<section>
+						<header>
+							<h3>Unordered List</h3>
+						</header>
+						<ul class="default">
+							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+						</ul>
+					</section>
+					<section>
+						<header>
+							<h3>Ordered List</h3>
+						</header>
+						<ol class="default">
+							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+						</ol>
+					</section>
+					<section>
+						<header>
+							<h3>Table</h3>
+						</header>
+						<div class="table-wrapper">
+							<table class="default">
+								<thead>
+									<tr>
+										<th>ID</th>
+										<th>Name</th>
+										<th>Description</th>
+										<th>Price</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>45815</td>
+										<td>Something</td>
+										<td>Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</td>
+										<td>29.99</td>
+									</tr>
+									<tr>
+										<td>24524</td>
+										<td>Nothing</td>
+										<td>Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</td>
+										<td>19.99</td>
+									</tr>
+									<tr>
+										<td>45815</td>
+										<td>Something</td>
+										<td>Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</td>
+										<td>29.99</td>
+									</tr>
+									<tr>
+										<td>24524</td>
+										<td>Nothing</td>
+										<td>Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</td>
+										<td>19.99</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<td colspan="3"></td>
+										<td>100.00</td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</section>
+					<section>
+						<header>
+							<h3>Form</h3>
+						</header>
+						<form method="post" action="#">
+							<div class="row">
+								<div class="6u 12u(mobilep)">
+									<label for="name">Name</label>
+									<input class="text" type="text" name="name" id="name" value="" placeholder="John Doe" />
+								</div>
+								<div class="6u 12u(mobilep)">
+									<label for="email">Email</label>
+									<input class="text" type="text" name="email" id="email" value="" placeholder="johndoe@domain.tld" />
+								</div>
+							</div>
+							<div class="row">
+								<div class="12u">
+									<label for="subject">Subject</label>
+									<input class="text" type="text" name="subject" id="subject" value="" placeholder="Enter your subject" />
+								</div>
+							</div>
+							<div class="row">
+								<div class="12u">
+									<label for="subject">Message</label>
+									<textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
+								</div>
+							</div>
+							<div class="row">
+								<div class="12u">
+									<ul class="actions">
+										<li><input type="submit" value="Send" /></li>
+										<li><input type="reset" value="Reset" class="alt" /></li>
+									</ul>
+								</div>
+							</div>
+						</form>
+					</section>
+				</div>
+				-->
+</body>
+</html>
